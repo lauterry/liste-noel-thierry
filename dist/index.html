@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="liste-noel">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <title>liste-noel</title>
+
+    <link rel="stylesheet" href="css/69635c6a.liste-noel.css"/>
+</head>
+<body ng-controller="mainController">
+
+<div class="parallax-container">
+	<div class="parallax"><img src="http://img.clubic.com/07008094-photo-joyeux-noel.jpg"></div>
+</div>
+<div class="section white">
+	<div class="row container">
+		<h2 class="header">La liste de Noël de Thierry</h2>
+		<p>Vous n'avez aucune idée de quoi m'offrir pour Noël. Vous trouverez sur ce site quelques idées.
+			<br/>Vous pouvez soit m'offrir le cadeau, soit y participer pour les cadeaux un peu plus chers.</p>
+
+		<div class="col m5 l4" ng-repeat="gift in gifts">
+			<div class="card">
+				<div class="card-image">
+					<img ng-src="{{gift.picture}}">
+					<span class="card-title">{{gift.name}}</span>
+				</div>
+				<div class="card-content">
+					<p>{{gift.desc}}</p>
+				</div>
+				<div class="card-action">
+					<a ng-href="{{gift.link}}">Acheter</a>
+					<a href='#'>Participer</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<div class="parallax-container footer">
+	<div class="parallax"><img src="http://wholles.com/wp-content/uploads/2014/02/Christmas-Photography-Wallpaper.jpg"></div>
+</div>
+
+
+<script src="js/fb9a8a44.liste-noel.js"></script>
+
+</body>
+</html>
