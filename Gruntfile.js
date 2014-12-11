@@ -177,4 +177,5 @@ module.exports = function (grunt) {
         'browserSync',
         'watch'
     ]);
+	grunt.registerTask('default', ['package']);
 };

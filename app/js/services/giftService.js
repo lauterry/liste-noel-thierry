@@ -1,5 +1,7 @@
 angular.module('liste-noel').factory('giftService', function ($firebase) {
 
+	"use strict";
+
 	var ref = new Firebase("https://listenoelthierry.firebaseio.com/");
 
 	// create an AngularFire reference to the data
