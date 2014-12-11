@@ -1,0 +1,38 @@
+.parallax-container {
+	height: 500px;
+
+	@media #{$small-and-down} {
+		height: auto;
+	}
+
+	&.footer {
+		height: 200px;
+	}
+}
+
+.card {
+	-webkit-transition: box-shadow .5s linear;
+	-moz-transition: box-shadow .5s linear;
+	-ms-transition: box-shadow .5s linear;
+	-o-transition: box-shadow .5s linear;
+	transition: box-shadow .5s linear;
+	margin-bottom: 25px;
+
+	.card-content {
+		min-height: 130px;
+
+		@media #{$small-and-down} {
+			min-height: 100px;
+		}
+	}
+
+	.card-image {
+		img	{
+			z-index: 100;
+		}
+	}
+
+	&:hover {
+		@extend .z-depth-3
+	}
+}

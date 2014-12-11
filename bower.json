@@ -1,0 +1,10 @@
+{
+  "name": "liste-noel",
+  "version": "",
+  "dependencies": {
+    "angular": "",
+    "angular-i18n": "",
+    "materialize": "*"
+  },
+  "devDependencies": {}
+}
