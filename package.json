@@ -6,7 +6,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "postinstall": "bash post_install.sh"
+    "postinstall": "bower install && grunt"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
