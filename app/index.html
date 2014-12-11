@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/app.css"/>
     <!-- endbuild -->
 </head>
-<body>
+<body ng-controller="mainController">
 
 <div class="parallax-container">
 	<div class="parallax"><img src="http://img.clubic.com/07008094-photo-joyeux-noel.jpg"></div>
@@ -24,97 +24,17 @@
 		<p>Vous n'avez aucune idée de quoi m'offrir pour Noël. Vous trouverez sur ce site quelques idées.
 			<br/>Vous pouvez soit m'offrir le cadeau, soit y participer pour les cadeaux un peu plus chers.</p>
 
-		<div class="col m5 l4">
+		<div class="col m5 l4" ng-repeat="gift in gifts">
 			<div class="card">
 				<div class="card-image">
-					<img src="img/integration.jpg">
-					<span class="card-title"></span>
+					<img ng-src="{{gift.picture}}">
+					<span class="card-title">{{gift.name}}</span>
 				</div>
 				<div class="card-content">
-					<p>L'intégration Web, ça fait partie de mon métier. Et j'espère que ce bouquin va m'en apprendre davantage.</p>
+					<p>{{gift.desc}}</p>
 				</div>
 				<div class="card-action">
-					<a href="http://www.eyrolles.com/Informatique/Livre/integration-web-les-bonnes-pratiques-9782212133707">Acheter</a>
-					<a href='#'>Participer</a>
-				</div>
-			</div>
-		</div>
-
-		<div class="col m5 l4">
-			<div class="card">
-				<div class="card-image">
-					<img src="img/bracelet_moto_360.jpg">
-					<span class="card-title">Bracelet Acier Noir pour Moto 360</span>
-				</div>
-				<div class="card-content">
-					<p>Un bracelet en acier noir pour ma montre Google Moto 360. Attention, juste le bracelet hein !</p>
-				</div>
-				<div class="card-action">
-					<a href="http://www.motorola.com/us/moto-360-bands/Moto-360-Metal-Bands/moto360-bands-metal.html">Acheter</a>
-					<a href='#'>Participer</a>
-				</div>
-			</div>
-		</div>
-
-		<div class="col m5 l4">
-			<div class="card">
-				<div class="card-image">
-					<img src="img/gants_smartphone.jpg">
-					<span class="card-title">Gants pour smartphone</span>
-				</div>
-				<div class="card-content">
-					<p>L'hiver arrive. Avec ces gants, plus besoin de les enlever pour utiliser mon smartphone dans le froid. Taille L.</p>
-				</div>
-				<div class="card-action">
-					<a href="http://www.amazon.fr/The-North-Face-Gants-Black/dp/B00AB7SVCQ/ref=sr_1_1?ie=UTF8&qid=1417557694&sr=8-1&keywords=etip">Acheter</a>
-					<a href='#'>Participer</a>
-				</div>
-			</div>
-		</div>
-
-		<div class="col m5 l4">
-			<div class="card">
-				<div class="card-image">
-					<img src="img/frigo_usb.jpg">
-					<span class="card-title">Frigo USB</span>
-				</div>
-				<div class="card-content">
-					<p>Partique pour garder son fromage blanc au frais au bureau.</p>
-				</div>
-				<div class="card-action">
-					<a href="http://www.amazon.fr/GreatGadgets-WUSBFRIDGE-Frigo-USB/dp/B003MCIBRC">Acheter</a>
-					<a href='#'>Participer</a>
-				</div>
-			</div>
-		</div>
-
-		<div class="col m5 l4">
-			<div class="card">
-				<div class="card-image">
-					<img src="img/bonobo.png">
-					<span class="card-title">Carte cadeau Bonobo</span>
-				</div>
-				<div class="card-content">
-					<p>Une carte cadeau de mon magasin de vêtement préféré, ca fait toujours plaisir.</p>
-				</div>
-				<div class="card-action">
-					<a href="http://www.bonoboplanet.com/">Acheter</a>
-					<a href='#'>Participer</a>
-				</div>
-			</div>
-		</div>
-
-		<div class="col m5 l4">
-			<div class="card">
-				<div class="card-image">
-					<img src="img/passage_bleu.jpg">
-					<span class="card-title">Carte, chèque ou coffret cadeau Passage Bleu</span>
-				</div>
-				<div class="card-content">
-					<p>Passage Bleu, mon endroit préféré pour prendre soin de moi.</p>
-				</div>
-				<div class="card-action">
-					<a href="http://www.passagebleu.com/">Acheter</a>
+					<a ng-href="{{gift.link}}">Acheter</a>
 					<a href='#'>Participer</a>
 				</div>
 			</div>
@@ -132,9 +52,12 @@
 <script src="vendor/jquery/dist/jquery.js"></script>
 <script src="vendor/materialize/bin/materialize.js"></script>
 <script src="vendor/angular/angular.js"></script>
+<script src="vendor/firebase/firebase.js"></script>
+<script src="vendor/angularfire/dist/angularfire.js"></script>
 <!-- endbower -->
 <script type="text/javascript" src="js/app.js"></script>
 <script type="text/javascript" src="js/controllers/mainController.js"></script>
+<script src="js/services/giftService.js"></script>
 <script>
 	$(document).ready(function(){
 		$('.parallax').parallax();

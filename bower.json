@@ -4,7 +4,9 @@
   "dependencies": {
     "angular": "",
     "angular-i18n": "",
-    "materialize": "*"
+    "materialize": "*",
+    "firebase": "~2.0.6",
+    "angularfire": "~0.9.0"
   },
   "devDependencies": {}
 }

@@ -1,3 +1,3 @@
-angular.module('liste-noel', []);
+angular.module('liste-noel', ['firebase']);
 
 

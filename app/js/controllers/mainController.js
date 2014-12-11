@@ -1,5 +1,6 @@
-angular.module('liste-noel').controller('mainController', function ($scope) {
+angular.module('liste-noel').controller('mainController', function ($scope, giftService) {
     "use strict";
 
-    $scope.message = "Yeahhh ! You're ready !";
+	$scope.gifts = giftService.fetch();
+
 });
