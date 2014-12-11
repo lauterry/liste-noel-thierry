@@ -6,7 +6,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "postinstall": "bash ./post_install.sh"
+    "postinstall": "bash post_install.sh"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
