@@ -12,6 +12,7 @@
     "trailing" : true,
     "globals": {
         "angular": false,
-		"Firebase": false
+		"Firebase": false,
+		"$": false
     }
 }
