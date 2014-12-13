@@ -9001,6 +9001,13 @@ ul.table-of-contents a.active {
 .card .card-image img {
   z-index: 0;
 }
+.card .card-image span.blur {
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-weight: 300;
+  bottom: 6px;
+}
 
 .modal .btn-flat {
   text-decoration: underline;

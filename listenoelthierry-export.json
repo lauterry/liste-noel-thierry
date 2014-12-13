@@ -1,0 +1,87 @@
+[
+	{
+		"bought": false,
+		"desc": "L'intégration Web, ça fait partie de mon métier. Et j'espère que ce bouquin va m'en apprendre davantage.",
+		"link": "http://www.eyrolles.com/Informatique/Livre/integration-web-les-bonnes-pratiques-9782212133707",
+		"name": "",
+		"picture": "img/integration.jpg",
+		"price": "33",
+		"remaining": 13
+	},
+	{
+		"bought": false,
+		"desc": "Un bracelet en acier noir pour ma montre Google Moto 360. Attention, juste le bracelet hein !",
+		"link": "http://www.motorola.com/us/moto-360-bands/Moto-360-Metal-Bands/moto360-bands-metal.html",
+		"name": "Bracelet Acier Noir pour Moto 360",
+		"picture": "img/bracelet_moto_360.jpg",
+		"price": "64",
+		"remaining": "64"
+	},
+	{
+		"bought": false,
+		"desc": "L'hiver arrive. Avec ces gants, plus besoin de les enlever pour utiliser mon smartphone dans le froid. Taille L.",
+		"link": "http://www.amazon.fr/The-North-Face-Gants-Black/dp/B00AB7SVCQ/ref=sr_1_1?ie=UTF8&qid=1417557694&sr=8-1&keywords=etip",
+		"name": "Gants North Face Etip",
+		"picture": "img/gants_smartphone.jpg",
+		"price": "22",
+		"remaining": "22"
+	},
+	{
+		"bought": false,
+		"desc": "Pratique pour garder mon fromage blanc au frais au bureau.",
+		"link": "http://www.amazon.fr/GreatGadgets-WUSBFRIDGE-Frigo-USB/dp/B003MCIBRC",
+		"name": "Frigo USB",
+		"picture": "img/frigo_usb.jpg",
+		"price": "23",
+		"remaining": "23"
+	},
+	{
+		"bought": false,
+		"desc": "Une carte cadeau de mon magasin de vêtement préféré, ca fait toujours plaisir.",
+		"link": "http://www.bonoboplanet.com/",
+		"multiple": true,
+		"name": "Carte cadeau Bonobo",
+		"picture": "img/bonobo.png",
+		"price": "0",
+		"remaining": "0"
+	},
+	{
+		"bought": false,
+		"desc": "Passage Bleu, mon endroit préféré pour prendre soin de moi.",
+		"link": "http://www.passagebleu.com/",
+		"multiple": true,
+		"name": "Carte, chèque ou coffret cadeau Passage Bleu",
+		"picture": "img/passage_bleu.jpg",
+		"price": "0",
+		"remaining": "0"
+	},
+	{
+		"bought": false,
+		"desc": "Un livre pour se mettre au bricolage",
+		"link": "http://www.amazon.fr/Lessentiel-du-bricolage-Collectif/dp/2215148659/ref=sr_1_4?s=books&ie=UTF8&qid=1418474718&sr=1-4&keywords=bricolage+livre",
+		"multiple": false,
+		"name": "L'essentiel du bricolage",
+		"picture": "img/bricolage.jpeg",
+		"price": 25,
+		"remaining": 25
+	},
+	{
+		"bought": false,
+		"desc": "Des cuillères plumes pour décorer mes assiettes",
+		"link": "http://www.amazon.fr/Jean-Daudignac-JD060-03-Coffret-Cuill%C3%A8res/dp/B00AENJFKE/ref=sr_1_1?ie=UTF8&qid=1418494600&sr=8-1&keywords=deco+spoon",
+		"multiple": false,
+		"name": "DecoSpoon",
+		"picture": "img/decospoon.jpg",
+		"price": 20,
+		"remaining": 20
+	}, {
+		"bought": false,
+		"desc": "",
+		"link": "https://www.spotify.com/fr/gift-card/",
+		"multiple": true,
+		"name": "Carte cadeau Spotify",
+		"picture": "img.spotify.jpg",
+		"price": "0",
+		"remaining": "0"
+	}
+]

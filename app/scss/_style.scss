@@ -50,6 +50,14 @@
 		img	{
 			z-index: 0;
 		}
+
+		span.blur {
+			right: 0;
+			background-color: rgba(0, 0, 0, 0.3);
+			color: #fff;
+			font-weight: 300;
+			bottom: 6px;
+		}
 	}
 
 	&:hover {

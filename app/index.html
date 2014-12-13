@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html ng-app="liste-noel">
 <head>
-    <meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="app/scss/_style.scss"/>
+	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">
     <title>liste-noel</title>
@@ -28,7 +29,7 @@
 			<div class="card">
 				<div class="card-image" ng-class="{'disabled' : gift.bought}">
 					<img ng-src="{{gift.picture}}">
-					<span class="card-title">{{gift.name}}</span>
+					<span class="card-title" ng-class="{'blur' : gift.name}">{{gift.name}}</span>
 				</div>
 				<div class="card-content" ng-class="{'disabled' : gift.bought}">
 					<p>{{gift.desc}}</p>
