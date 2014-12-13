@@ -7,9 +7,17 @@ angular.module('liste-noel').factory('giftService', function ($firebase) {
 	// create an AngularFire reference to the data
 	var sync = $firebase(ref);
 
+	var array = sync.$asArray();
+
 	return {
 		fetch : function () {
-			return sync.$asObject();
+			return array;
+		},
+		getByRecordKey: function (recordKey) {
+			return array.$getRecord(recordKey);
+		},
+		save : function (gift) {
+			return array.$save(gift);
 		}
 	};
 

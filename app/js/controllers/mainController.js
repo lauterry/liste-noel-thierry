@@ -1,6 +1,15 @@
-angular.module('liste-noel').controller('mainController', function ($scope, giftService) {
+angular.module('liste-noel').controller('mainController', function ($scope, giftService, $log) {
     "use strict";
 
-	$scope.gifts = giftService.fetch();
+	this.gifts = giftService.fetch();
+
+	this.confirmParticipation = function () {
+
+		var gift = giftService.getByRecordKey(this.gift.$id);
+		gift.remaining = this.gift.price  - this.participation;
+		giftService.save(gift).then(function () {
+			$log.log('Gift saved !');
+		});
+	}
 
 });

@@ -4,7 +4,11 @@ angular.module('liste-noel').directive('modal', function () {
 	return {
 		restrict: 'E',
 		replace: true,
-		templateUrl : 'partials/modal.html',
+		scope: {
+			value: "@",
+			href: "@"
+		},
+		templateUrl : 'js/directives/modal/modal.html',
 		link : function (scope, elem) {
 			$(elem).leanModal();
 		}

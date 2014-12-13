@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/app.css"/>
     <!-- endbuild -->
 </head>
-<body ng-controller="mainController">
+<body ng-controller="mainController as main">
 
 <div class="parallax-container">
 	<div class="parallax"><img src="img/noel-clavier.jpg"></div>
@@ -24,7 +24,7 @@
 		<p>Vous n'avez aucune idée de quoi m'offrir pour Noël. Vous trouverez sur ce site quelques idées.
 			<br/>Vous pouvez soit m'offrir le cadeau, soit y participer pour les cadeaux un peu plus chers.</p>
 
-		<div class="col m5 l4" ng-repeat="gift in gifts">
+		<div class="col m5 l4" ng-repeat="gift in main.gifts">
 			<div class="card">
 				<div class="card-image">
 					<img ng-src="{{gift.picture}}">
@@ -35,7 +35,8 @@
 				</div>
 				<div class="card-action">
 					<a ng-href="{{gift.link}}">Acheter</a>
-					<modal id="trigger-modal{{$index}}" href="#modal1"></modal>
+					<modal id="trigger-modal{{$index}}" href="#modal" ng-click="main.gift = gift;" value="Je participe"></modal>
+					{{giftModal.name}}
 				</div>
 			</div>
 		</div>
@@ -44,6 +45,16 @@
 </div>
 <div class="parallax-container footer">
 	<div class="parallax"><img src="img/noel-boules.jpg"></div>
+</div>
+
+<div id="modal" class="modal">
+	<h4>Participation</h4>
+	<p>Pour le cadeau <span class="modal-emphasis">{{main.gift.name}}</span>, je souhaite participer à hauteur de :</p>
+	<div class="input-field">
+		<input id="amount" type="text" required ng-model="main.participation">
+		<label for="amount">Montant de la participation</label>
+	</div>
+	<a href="#" class="waves-effect waves-light btn modal_close" ng-click="main.confirmParticipation()">Je participe</a>
 </div>
 
 <!-- build:js js/liste-noel.js -->
@@ -56,7 +67,7 @@
 <!-- endbower -->
 <script type="text/javascript" src="js/app.js"></script>
 <script type="text/javascript" src="js/controllers/mainController.js"></script>
-<script src="js/directives/modal.js"></script>
+<script src="js/directives/modal/modal.js"></script>
 <script src="js/services/giftService.js"></script>
 <!-- endbuild -->
 

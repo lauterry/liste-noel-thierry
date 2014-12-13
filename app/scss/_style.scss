@@ -36,3 +36,11 @@
 		@extend .z-depth-3
 	}
 }
+
+.modal {
+
+	&-emphasis {
+		@extend .orange-text, .lighten-5;
+	}
+
+}
