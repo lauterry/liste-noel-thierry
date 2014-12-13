@@ -59,7 +59,7 @@ module.exports = function (grunt) {
                         cwd: '<%= assetsDir %>',
                         dest: '<%= distDir %>/',
                         src: [
-                            'index.html',
+                            '**/*.html',
                             'img/**',
 							'font/**'
                         ]
