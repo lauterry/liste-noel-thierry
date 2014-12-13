@@ -12,5 +12,5 @@ angular.module('liste-noel').directive('modal', function () {
 		link : function (scope, elem) {
 			$(elem).leanModal();
 		}
-	}
+	};
 });

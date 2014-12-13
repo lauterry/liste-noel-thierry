@@ -8975,13 +8975,33 @@ ul.table-of-contents a.active {
   margin-bottom: 25px;
 }
 .card .card-content {
-  min-height: 130px;
+  min-height: 160px;
+}
+.card .card-content .card-link {
+  margin-top: 20px;
+}
+.card .card-content .card-link a:hover {
+  text-decoration: underline;
+}
+.card .card-content.disabled {
+  -ms-filter: grayscale(1) blur(2px);
+  -webkit-filter: grayscale(1) blur(2px);
+  filter: grayscale(1) blur(2px);
 }
 @media only screen and (max-width: 600px) {
   .card .card-content {
     min-height: 100px;
   }
 }
+.card .card-image.disabled {
+  -ms-filter: grayscale(1) blur(2px);
+  -webkit-filter: grayscale(1) blur(2px);
+  filter: grayscale(1) blur(2px);
+}
 .card .card-image img {
   z-index: 0;
+}
+
+.modal .btn-flat {
+  text-decoration: underline;
 }

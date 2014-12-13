@@ -10,6 +10,14 @@ angular.module('liste-noel').controller('mainController', function ($scope, gift
 		giftService.save(gift).then(function () {
 			$log.log('Gift saved !');
 		});
-	}
+	};
+
+	this.confirmBuy = function () {
+		var gift = giftService.getByRecordKey(this.gift.$id);
+		gift.bought = true;
+		giftService.save(gift).then(function () {
+			$log.log('Gift saved !');
+		});
+	};
 
 });
