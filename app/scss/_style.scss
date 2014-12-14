@@ -54,9 +54,6 @@
 	}
 }
 
-
-
-
 .card {
 	-webkit-transition: box-shadow .5s linear;
 	-moz-transition: box-shadow .5s linear;
@@ -66,7 +63,7 @@
 	margin-bottom: 25px;
 
 	.card-content {
-		min-height: 160px;
+		min-height: 120px;
 
 		.card-link {
 			margin-top: 20px;
@@ -104,6 +101,15 @@
 			color: #fff;
 			font-weight: 300;
 			bottom: 6px;
+		}
+	}
+
+	.card-action.secondary-content {
+		border-top: 0;
+		padding-bottom: 10px;
+
+		> .card-link {
+			margin-bottom: 0;
 		}
 	}
 

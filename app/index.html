@@ -34,7 +34,9 @@
 				</div>
 				<div class="card-content" ng-class="{'disabled' : gift.bought}">
 					<p>{{gift.desc}}</p>
-					<p class="card-link"><a ng-href="{{gift.link}}">Où je peux l'acheter ?</a></p>
+				</div>
+				<div class="card-action secondary-content">
+					<p class="card-link"><a class="blue-text" ng-href="{{gift.link}}">Où je peux l'acheter ?</a></p>
 				</div>
 				<div class="card-action" ng-switch="gift.bought">
 					<span ng-switch-when="true" class="green-text" >Quelqu'un a offert ce cadeau</span>

@@ -9016,7 +9016,7 @@ ul.table-of-contents a.active {
   margin-bottom: 25px;
 }
 .card .card-content {
-  min-height: 160px;
+  min-height: 120px;
 }
 .card .card-content .card-link {
   margin-top: 20px;
@@ -9048,6 +9048,13 @@ ul.table-of-contents a.active {
   color: #fff;
   font-weight: 300;
   bottom: 6px;
+}
+.card .card-action.secondary-content {
+  border-top: 0;
+  padding-bottom: 10px;
+}
+.card .card-action.secondary-content > .card-link {
+  margin-bottom: 0;
 }
 
 .modal .btn-flat {
