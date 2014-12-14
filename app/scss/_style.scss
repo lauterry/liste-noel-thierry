@@ -8,7 +8,54 @@
 	&.footer {
 		height: 200px;
 	}
+
+	.parallax {
+		img {
+			-ms-filter: blur(4px);
+			-webkit-filter: blur(4px);
+			filter: blur(4px);
+		}
+	}
 }
+
+
+.hero {
+	margin: 0 22%;
+	padding: 16px;
+	position: absolute;
+	top: 188px;
+	color: #fff;
+
+	@media #{$small-and-down} {
+		top: 10px;
+		margin: 0 20%;
+	}
+
+	.hero-title {
+		font-family: 'Mountains of Christmas', cursive;
+		color: #fff;
+		font-size: 6rem;
+		font-weight: 200;
+
+		@media #{$small-and-down} {
+			font-size: 3rem;
+			font-weight: 200;
+		}
+	}
+
+	.hero-intro {
+		color: #fff;
+		font-size: 1.2rem;
+		font-weight: 200;
+
+		@media #{$small-and-down} {
+			display: none;
+		}
+	}
+}
+
+
+
 
 .card {
 	-webkit-transition: box-shadow .5s linear;

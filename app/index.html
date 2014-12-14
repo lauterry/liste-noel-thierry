@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html ng-app="liste-noel">
 <head>
-	<link rel="stylesheet" type="text/css" href="app/scss/_style.scss"/>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">
     <title>liste-noel</title>
-
+	<link href='http://fonts.googleapis.com/css?family=Mountains+of+Christmas' rel='stylesheet' type='text/css'>
     <!-- build:css css/liste-noel.css -->
     <!-- bower:css -->
     <!-- endbower -->
@@ -18,13 +17,15 @@
 
 <div class="parallax-container">
 	<div class="parallax"><img src="img/noel-clavier.jpg"></div>
+	<div class="hero">
+		<h1 class="hero-title">La liste de Thierry</h1>
+		<p class="hero-intro">
+			Le site de ceux qui veulent des idées de cadeaux de Noël pour moi
+		</p>
+	</div>
 </div>
 <div class="section white">
 	<div class="row container">
-		<h2 class="header">La liste de Noël de Thierry</h2>
-		<p>Vous n'avez aucune idée de quoi m'offrir pour Noël. Vous trouverez sur ce site quelques idées.
-			<br/>Vous pouvez soit m'offrir le cadeau, soit y participer pour les cadeaux un peu plus chers.</p>
-
 		<div class="col m5 l4" ng-repeat="gift in main.gifts">
 			<div class="card">
 				<div class="card-image" ng-class="{'disabled' : gift.bought}">
