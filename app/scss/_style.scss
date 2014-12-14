@@ -73,23 +73,12 @@
 			}
 		}
 
-		&.disabled {
-			-ms-filter: grayscale(1) blur(2px);
-			-webkit-filter: grayscale(1) blur(2px);
-			filter: grayscale(1) blur(2px);
-		}
-
 		@media #{$small-and-down} {
 			min-height: 100px;
 		}
 	}
 
 	.card-image {
-		&.disabled {
-			-ms-filter: grayscale(1) blur(2px);
-			-webkit-filter: grayscale(1) blur(2px);
-			filter: grayscale(1) blur(2px);
-		}
 
 		img	{
 			z-index: 0;
@@ -116,6 +105,12 @@
 	&:hover {
 		@extend .z-depth-3
 	}
+}
+
+.disabled {
+	-ms-filter: grayscale(1) blur(2px);
+	-webkit-filter: grayscale(1) blur(2px);
+	filter: grayscale(1) blur(2px);
 }
 
 .modal {
