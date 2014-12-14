@@ -18,13 +18,13 @@
 		"remaining": 64
 	},
 	{
-		"bought": false,
+		"bought": true,
 		"desc": "L'hiver arrive. Avec ces gants, plus besoin de les enlever pour utiliser mon smartphone dans le froid. Taille L.",
 		"link": "http://www.amazon.fr/The-North-Face-Gants-Black/dp/B00AB7SVCQ/ref=sr_1_1?ie=UTF8&qid=1417557694&sr=8-1&keywords=etip",
 		"name": "Gants North Face Etip",
 		"picture": "img/gants_smartphone.jpg",
 		"price": 22,
-		"remaining": 22
+		"remaining": 0
 	},
 	{
 		"bought": false,
@@ -56,14 +56,14 @@
 		"remaining": 0
 	},
 	{
-		"bought": false,
+		"bought": true,
 		"desc": "Un livre pour se mettre au bricolage",
 		"link": "http://www.amazon.fr/Lessentiel-du-bricolage-Collectif/dp/2215148659/ref=sr_1_4?s=books&ie=UTF8&qid=1418474718&sr=1-4&keywords=bricolage+livre",
 		"multiple": false,
 		"name": "L'essentiel du bricolage",
 		"picture": "img/bricolage.jpeg",
 		"price": 25,
-		"remaining": 25
+		"remaining": 0
 	},
 	{
 		"bought": false,
