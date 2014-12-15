@@ -69,14 +69,23 @@
 
 <div id="participate-modal" class="modal">
 	<h4>Participation</h4>
-	<p>Pour le cadeau <span class="modal-emphasis">{{main.gift.name}}</span>, je souhaite participer à hauteur de :</p>
+	<p>Le cadeau <span class="modal-emphasis">{{main.gift.name}}</span> coûte <span class="amount red-text">{{ main.gift.price }}€.</span>
+		<span ng-show="(main.gift.price - main.gift.remaining) === 0">Personne n'a encore participé.</span>
+		<span ng-show="(main.gift.price - main.gift.remaining) > 0">Il y a une participation totale de <span class="amount blue-text">{{ (main.gift.price - main.gift.remaining) }}€</span>.</span>
+	</p>
+	<p>Vous pouvez donc contribuer jusqu'à <span class="amount green-text">{{ main.gift.remaining }}€</span>.</p>
+	<p>Je souhaite participer à hauteur de :</p>
 	<div class="input-field">
-		<input id="amount" type="text" required ng-model="main.participation">
+		<input id="amount" type="text" required ng-model="main.participation" autofocus>
 		<label for="amount">Montant de la participation</label>
 	</div>
 	<a href="#" class="waves-effect waves-light btn modal_close" ng-click="main.confirmParticipation()">Je participe</a>
 	<a href="" class="btn-flat modal_close">Annuler</a>
 </div>
+
+
+
+
 
 <div id="buy-modal" class="modal">
 	<h4>J'offre</h4>
