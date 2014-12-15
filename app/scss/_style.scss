@@ -55,6 +55,7 @@
 }
 
 .card {
+	@extend .z-depth-2;
 	-webkit-transition: box-shadow .5s linear;
 	-moz-transition: box-shadow .5s linear;
 	-ms-transition: box-shadow .5s linear;
@@ -100,10 +101,6 @@
 		> .card-link {
 			margin-bottom: 0;
 		}
-	}
-
-	&:hover {
-		@extend .z-depth-3
 	}
 }
 
