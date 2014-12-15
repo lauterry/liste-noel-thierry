@@ -27,4 +27,14 @@ angular.module('liste-noel').controller('mainController', function ($scope, gift
 		});
 	};
 
+	this.filterByBoughtOrNot = function (filterByNotBought) {
+		return function (gift) {
+			if (filterByNotBought) {
+				return gift.bought === false;
+			} else {
+				return gift;
+			}
+		}
+	}
+
 });
