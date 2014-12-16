@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width">
     <title>liste-noel</title>
 	<link href='http://fonts.googleapis.com/css?family=Mountains+of+Christmas' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/17599d4d.liste-noel.css"/>
+    <link rel="stylesheet" href="css/7407c0bd.liste-noel.css"/>
 </head>
 <body ng-controller="mainController as main">
 
@@ -21,7 +21,13 @@
 </div>
 <div class="section white">
 	<div class="row container">
-		<div class="col m5 l4" ng-repeat="gift in main.gifts">
+		<div class="col">
+			<input type="checkbox" id="show-available-gift-checkbox" ng-model="filterByNotBought" />
+			<label class="black-text" for="show-available-gift-checkbox">N'afficher que les cadeaux non offerts</label>
+		</div>
+	</div>
+	<div class="row container">
+		<div class="col m5 l4" ng-repeat="gift in main.gifts | filter:main.filterByBoughtOrNot(filterByNotBought)">
 			<div class="card">
 				<div class="card-image" ng-class="{'disabled' : gift.bought}">
 					<img ng-src="{{gift.picture}}">
@@ -34,7 +40,7 @@
 					<p class="card-link"><a class="blue-text" ng-href="{{gift.link}}">Où je peux l'acheter ?</a></p>
 				</div>
 				<div class="card-action" ng-switch="gift.bought">
-					<span ng-switch-when="true" class="green-text" >Quelqu'un a offert ce cadeau</span>
+					<span ng-switch-when="true" class="green-text" >Ce cadeau est offert</span>
 					<modal ng-switch-when="false"
 						   	id="buy-modal{{$index}}"
 							ng-show="gift.remaining === gift.price"
@@ -89,7 +95,7 @@
 	<a href="" class="btn-flat modal_close">Non, je vais y réfléchir</a>
 </div>
 
-<script src="js/eab61dce.liste-noel.js"></script>
+<script src="js/f30b01d6.liste-noel.js"></script>
 
 </body>
 </html>

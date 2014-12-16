@@ -44,7 +44,7 @@ angular.module('liste-noel').controller('mainController', function ($scope, gift
 			} else {
 				return gift;
 			}
-		}
-	}
+		};
+	};
 
 });
