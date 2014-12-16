@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html ng-app="liste-noel">
 <head>
+	<link rel="stylesheet" type="text/css" href="app/scss/app.scss"/>
 	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width">
-    <title>liste-noel</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width">
+	<title>liste-noel</title>
 	<link href='http://fonts.googleapis.com/css?family=Mountains+of+Christmas' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="css/7407c0bd.liste-noel.css"/>
+	<link rel="stylesheet" href="css/7407c0bd.liste-noel.css"/>
 </head>
 <body ng-controller="mainController as main">
 
@@ -14,6 +15,7 @@
 	<div class="parallax"><img src="img/noel-clavier.jpg"></div>
 	<div class="hero">
 		<h1 class="hero-title">La liste de Thierry</h1>
+
 		<p class="hero-intro">
 			Le site de ceux qui veulent des idées de cadeaux de Noël pour moi
 		</p>
@@ -22,7 +24,7 @@
 <div class="section white">
 	<div class="row container">
 		<div class="col">
-			<input type="checkbox" id="show-available-gift-checkbox" ng-model="filterByNotBought" />
+			<input type="checkbox" id="show-available-gift-checkbox" ng-model="filterByNotBought"/>
 			<label class="black-text" for="show-available-gift-checkbox">N'afficher que les cadeaux non offerts</label>
 		</div>
 	</div>
@@ -40,62 +42,72 @@
 					<p class="card-link"><a class="blue-text" ng-href="{{gift.link}}">Où je peux l'acheter ?</a></p>
 				</div>
 				<div class="card-action" ng-switch="gift.bought">
-					<span ng-switch-when="true" class="green-text" >Ce cadeau est offert</span>
-					<modal ng-switch-when="false"
-						   	id="buy-modal{{$index}}"
-							ng-show="gift.remaining === gift.price"
-							href="#buy-modal"
-							ng-click="main.gift = gift;"
-							value="Offrir" >
-					</modal>
-					<modal ng-switch-when="false"
-						   	id="participate-modal{{$index}}"
-						   	href="#participate-modal"
-						   	ng-click="main.gift = gift;"
-							value="Participer"></modal>
+					<span ng-switch-when="true" class="green-text">Ce cadeau a été offert</span>
+
+					<div ng-switch-when="false">
+						<div ng-hide="gift.multiple">
+							<modal
+								id="buy-modal{{$index}}"
+								ng-show="gift.remaining === gift.price"
+								href="#buy-modal"
+								ng-click="main.gift = gift;"
+								value="J'offre">
+							</modal>
+							<modal
+								id="participate-modal{{$index}}"
+								href="#participate-modal"
+								ng-click="main.gift = gift;"
+								value="J'y participe"></modal>
+						</div>
+						<div ng-show="gift.multiple">
+							Peut être offert plusieurs fois.
+						</div>
+					</div>
+
 				</div>
-
 			</div>
+
 		</div>
-
 	</div>
-</div>
-<div class="parallax-container footer">
-	<div class="parallax"><img src="img/noel-boules.jpg"></div>
-</div>
-
-
-
-
-
-<div id="participate-modal" class="modal">
-	<h4>Participation</h4>
-	<p>Le cadeau <span class="modal-emphasis">{{main.gift.name}}</span> coûte <span class="amount red-text">{{ main.gift.price }}€.</span>
-		<span ng-show="(main.gift.price - main.gift.remaining) === 0">Personne n'a encore participé.</span>
-		<span ng-show="(main.gift.price - main.gift.remaining) > 0">Il y a une participation totale de <span class="amount blue-text">{{ (main.gift.price - main.gift.remaining) }}€</span>.</span>
-	</p>
-	<p>Vous pouvez donc contribuer jusqu'à <span class="amount green-text">{{ main.gift.remaining }}€</span>.</p>
-	<p>Je souhaite participer à hauteur de :</p>
-	<div class="input-field">
-		<input id="amount" type="text" required ng-model="main.participation" autofocus>
-		<label for="amount">Montant de la participation</label>
+	<div class="parallax-container footer">
+		<div class="parallax"><img src="img/noel-boules.jpg"></div>
 	</div>
-	<a href="#" class="waves-effect waves-light btn modal_close" ng-click="main.confirmParticipation()">Je participe</a>
-	<a href="" class="btn-flat modal_close">Annuler</a>
-</div>
 
 
+	<div id="participate-modal" class="modal">
+		<h4>Participation</h4>
+
+		<p>Le cadeau <span class="modal-emphasis">{{main.gift.name}}</span> coûte <span class="amount red-text">{{ main.gift.price }}€.</span>
+			<span ng-show="(main.gift.price - main.gift.remaining) === 0">Personne n'a encore participé.</span>
+			<span ng-show="(main.gift.price - main.gift.remaining) > 0">Il y a une participation totale de <span
+				class="amount blue-text">{{ (main.gift.price - main.gift.remaining) }}€</span>.</span>
+		</p>
+
+		<p>Vous pouvez donc contribuer jusqu'à <span class="amount green-text">{{ main.gift.remaining }}€</span>.</p>
+
+		<p>Je souhaite participer à hauteur de :</p>
+
+		<div class="input-field">
+			<input id="amount" type="text" required ng-model="main.participation" autofocus>
+			<label for="amount">Montant de la participation</label>
+		</div>
+		<a href="#" class="waves-effect waves-light btn modal_close" ng-click="main.confirmParticipation()">Je
+			participe</a>
+		<a href="" class="btn-flat modal_close">Annuler</a>
+	</div>
 
 
+	<div id="buy-modal" class="modal">
+		<h4>J'offre</h4>
 
-<div id="buy-modal" class="modal">
-	<h4>J'offre</h4>
-	<p>Etes-vous sur de vouloir m'offrir <span class="modal-emphasis">{{main.gift.name}}</span>. Si c'est le cas, d'autres personnes ne pourront plus me l'offrir.</p>
-	<a href="" class="waves-effect green waves-light btn modal_close" ng-click="main.confirmBuy();">Oui, je te l'offre</a>
-	<a href="" class="btn-flat modal_close">Non, je vais y réfléchir</a>
-</div>
+		<p>Etes-vous sur de vouloir réserver et m'offrir <span class="modal-emphasis">{{main.gift.name | defaultGift}}</span>. Si c'est le cas,
+			d'autres personnes ne pourront plus me l'offrir.</p>
+		<a href="" class="waves-effect green waves-light btn modal_close" ng-click="main.confirmBuy();">Oui, je te
+			l'offre</a>
+		<a href="" class="btn-flat modal_close">Non, je vais y réfléchir</a>
+	</div>
 
-<script src="js/f30b01d6.liste-noel.js"></script>
+	<script src="js/d0867532.liste-noel.js"></script>
 
 </body>
 </html>
