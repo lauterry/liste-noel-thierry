@@ -9,3 +9,5 @@ angular.module('liste-noel').run(function () {
 });
 
 
+angular.module('liste-noel').constant('firebaseRootUrl', 'https://listenoelthierry.firebaseio.com/');
+

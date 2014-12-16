@@ -1,23 +1,20 @@
-angular.module('liste-noel').factory('giftService', function ($firebase) {
+angular.module('liste-noel').factory('giftService', function ($firebase, firebaseRef) {
 
 	"use strict";
 
-	var ref = new Firebase("https://listenoelthierry.firebaseio.com/");
+	var sync = $firebase(firebaseRef.child('gifts'));
 
-	// create an AngularFire reference to the data
-	var sync = $firebase(ref);
-
-	var array = sync.$asArray();
+	var gifts = sync.$asArray();
 
 	return {
 		fetch : function () {
-			return array;
+			return gifts;
 		},
 		getByRecordKey: function (recordKey) {
-			return array.$getRecord(recordKey);
+			return gifts.$getRecord(recordKey);
 		},
 		save : function (gift) {
-			return array.$save(gift);
+			return gifts.$save(gift);
 		}
 	};
 
