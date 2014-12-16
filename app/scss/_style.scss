@@ -125,3 +125,17 @@
 [for="show-available-gift-checkbox"] {
 	color: #000;
 }
+
+.sticker {
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	border-radius: 300px;
+	top: 10px;
+	left: 10px;
+	text-align: center;
+	line-height: 50px;
+	background-color: #43A9DD;
+	color: white;
+	transform: rotate(-30deg);
+}

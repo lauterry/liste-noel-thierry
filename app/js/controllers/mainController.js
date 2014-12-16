@@ -13,13 +13,14 @@ angular.module('liste-noel').controller('mainController', function ($scope, gift
 		}
 
 		giftService.save(gift).then(angular.bind(this, function () {
-			this.participation = undefined;
 			var today = new Date();
 			logService.add({
 				"date" : today.getTime(),
 				"name" : gift.name,
-				"type" : "contribute"
+				"type" : "contribute",
+				"amount" : this.participation
 			});
+			this.participation = undefined;
 		}));
 	};
 

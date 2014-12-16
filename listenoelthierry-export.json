@@ -38,7 +38,7 @@
 		},
 		{
 			"bought": false,
-			"desc": "Une carte cadeau de mon magasin de vêtement préféré, ca fait toujours plaisir.",
+			"desc": "Une carte cadeau (entre 10€ et 150€) de mon magasin de vêtement préféré, ca fait toujours plaisir.",
 			"link": "http://www.bonoboplanet.com/",
 			"multiple": true,
 			"name": "Carte cadeau Bonobo",
@@ -77,7 +77,7 @@
 			"remaining": 20
 		}, {
 			"bought": false,
-			"desc": "Des cartes cadeau pour m'abonner à Spotify et écouter ma musique en ligne où je veux, quand je veux.",
+			"desc": "Des cartes cadeau (10, 30 ou 60€) pour m'abonner à Spotify et écouter ma musique en ligne où je veux, quand je veux.",
 			"link": "https://www.spotify.com/fr/gift-card/",
 			"multiple": true,
 			"name": "Carte cadeau Spotify",
@@ -86,13 +86,5 @@
 			"remaining": 0
 		}
 	],
-	"logs" : [{
-		"date": "65464646565",
-		"type": "buy",
-		"name": "Gants North Face Etip"
-	}, {
-		"date": "487898998898989",
-		"type": "buy",
-		"name": "L'essentiel du bricolage"
-	}]
+	"logs" : []
 }

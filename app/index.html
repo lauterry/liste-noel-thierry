@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html ng-app="liste-noel">
 <head>
-	<link rel="stylesheet" type="text/css" href="app/scss/app.scss"/>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width">
@@ -38,6 +37,7 @@
 			<div class="card">
 				<div class="card-image" ng-class="{'disabled' : gift.bought}">
 					<img ng-src="{{gift.picture}}">
+					<div class="sticker" ng-show="gift.remaining">{{gift.remaining}} €</div>
 					<span class="card-title" ng-class="{'blur' : gift.name}">{{gift.name}}</span>
 				</div>
 				<div class="card-content" ng-class="{'disabled' : gift.bought}">

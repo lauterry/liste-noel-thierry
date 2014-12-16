@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html ng-app="liste-noel">
 <head>
-	<link rel="stylesheet" type="text/css" href="app/scss/app.scss"/>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width">
 	<title>liste-noel</title>
 	<link href='http://fonts.googleapis.com/css?family=Mountains+of+Christmas' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="css/7407c0bd.liste-noel.css"/>
+	<link rel="stylesheet" href="css/835af993.liste-noel.css"/>
 </head>
 <body ng-controller="mainController as main">
 
@@ -33,6 +32,7 @@
 			<div class="card">
 				<div class="card-image" ng-class="{'disabled' : gift.bought}">
 					<img ng-src="{{gift.picture}}">
+					<div class="sticker" ng-show="gift.remaining">{{gift.remaining}} €</div>
 					<span class="card-title" ng-class="{'blur' : gift.name}">{{gift.name}}</span>
 				</div>
 				<div class="card-content" ng-class="{'disabled' : gift.bought}">
@@ -107,7 +107,7 @@
 		<a href="" class="btn-flat modal_close">Non, je vais y réfléchir</a>
 	</div>
 
-	<script src="js/d0867532.liste-noel.js"></script>
+	<script src="js/52b1f149.liste-noel.js"></script>
 
 </body>
 </html>
