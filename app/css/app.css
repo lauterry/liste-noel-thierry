@@ -9056,3 +9056,7 @@ ul.table-of-contents a.active {
 .modal .btn-flat {
   text-decoration: underline;
 }
+
+[for="show-available-gift-checkbox"] {
+  color: #000;
+}
