@@ -1,4 +1,4 @@
-angular.module('liste-noel').controller('mainController', function ($scope, giftService, logService, $log) {
+angular.module('liste-noel').controller('mainController', function ($scope, giftService, logService) {
     "use strict";
 
 	this.gifts = giftService.fetch();
@@ -14,12 +14,12 @@ angular.module('liste-noel').controller('mainController', function ($scope, gift
 
 		giftService.save(gift).then(angular.bind(this, function () {
 			this.participation = undefined;
+			var today = new Date();
 			logService.add({
-				"date" : new Date(),
+				"date" : today.getTime(),
 				"name" : gift.name,
 				"type" : "contribute"
 			});
-			$log.log('Gift saved !');
 		}));
 	};
 
@@ -28,12 +28,12 @@ angular.module('liste-noel').controller('mainController', function ($scope, gift
 		gift.bought = true;
 		gift.remaining = 0;
 		giftService.save(gift).then(function () {
+			var today = new Date();
 			logService.add({
-				"date" : new Date(),
+				"date" : today.getTime(),
 				"name" : gift.name,
 				"type" : "contribute"
 			});
-			$log.log('Gift saved !');
 		});
 	};
 
