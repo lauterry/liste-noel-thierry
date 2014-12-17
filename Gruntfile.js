@@ -145,8 +145,8 @@ module.exports = function (grunt) {
             dist: {
                 options: {
                     optimizationLevel: 7,
-                    progressive: false,
-                    interlaced: true
+                    progressive: true,
+                    interlaced: false
                 },
                 files: [{
                         expand: true,

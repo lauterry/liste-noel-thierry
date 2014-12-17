@@ -10,15 +10,6 @@
 			"remaining": 33
 		},
 		{
-			"bought": false,
-			"desc": "Un bracelet en acier noir pour ma montre Google Moto 360. Attention, juste le bracelet hein !",
-			"link": "http://www.motorola.com/us/moto-360-bands/Moto-360-Metal-Bands/moto360-bands-metal.html",
-			"name": "Bracelet Acier Noir pour Moto 360",
-			"picture": "img/bracelet_moto_360.jpg",
-			"price": 64,
-			"remaining": 64
-		},
-		{
 			"bought": true,
 			"desc": "L'hiver arrive. Avec ces gants, plus besoin de les enlever pour utiliser mon smartphone dans le froid. Taille L.",
 			"link": "http://www.amazon.fr/The-North-Face-Gants-Black/dp/B00AB7SVCQ/ref=sr_1_1?ie=UTF8&qid=1417557694&sr=8-1&keywords=etip",

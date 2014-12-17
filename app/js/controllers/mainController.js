@@ -1,27 +1,36 @@
 angular.module('liste-noel').controller('mainController', function ($scope, giftService, logService) {
     "use strict";
 
+	this.showMaxError = false;
+
 	this.gifts = giftService.fetch();
 
 	this.confirmParticipation = function () {
+		this.showMaxError = false;
 
 		var gift = giftService.getByRecordKey(this.gift.$id);
-		gift.remaining = gift.remaining - this.participation;
 
-		if (gift.remaining <= 0) {
-			gift.bought = true;
+		if (this.participation > gift.remaining) {
+			this.showMaxError = true;
+		} else {
+			gift.remaining = gift.remaining - this.participation;
+			if (gift.remaining <= 0) {
+				gift.bought = true;
+			}
+
+			giftService.save(gift).then(angular.bind(this, function () {
+				var today = new Date();
+				logService.add({
+					"date" : today.getTime(),
+					"name" : gift.name,
+					"type" : "contribute",
+					"amount" : this.participation
+				});
+				this.participation = undefined;
+			}));
+
+			$scope.contributeForm.$setPristine();
 		}
-
-		giftService.save(gift).then(angular.bind(this, function () {
-			var today = new Date();
-			logService.add({
-				"date" : today.getTime(),
-				"name" : gift.name,
-				"type" : "contribute",
-				"amount" : this.participation
-			});
-			this.participation = undefined;
-		}));
 	};
 
 	this.confirmBuy = function () {

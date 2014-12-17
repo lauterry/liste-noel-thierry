@@ -88,13 +88,20 @@
 
 		<p>Je souhaite participer à hauteur de :</p>
 
-		<div class="input-field">
-			<input id="amount" type="text" required ng-model="main.participation" autofocus>
-			<label for="amount">Montant de la participation</label>
-		</div>
-		<a href="#" class="waves-effect waves-light btn modal_close" ng-click="main.confirmParticipation()">Je
-			participe</a>
-		<a href="" class="btn-flat modal_close">Annuler</a>
+		<form novalidate name="contributeForm">
+			<div class="input-field">
+				<input id="amount" name="amount" type="text" required ng-model="main.participation" autofocus
+					   ng-pattern="/^[0-9]{1,7}/">
+				<label for="amount">Montant de la participation (€)</label>
+				<span class="red-text" ng-show="contributeForm.amount.$error.pattern || main.showMaxError">Veuillez saisir un montant inférieur à {{ main.gift.remaining }}€</span>
+				<span class="red-text" ng-show="contributeForm.$dirty && contributeForm.amount.$error.required">N'oubliez pas de saisir le
+					montant de votre participation</span>
+			</div>
+			<button class="waves-effect waves-light btn modal_close" ng-click="main.confirmParticipation()"
+			   ng-disabled="contributeForm.$invalid">Je participe</button>
+			<a href="" class="btn-flat modal_close">Annuler</a>
+		</form>
+
 	</div>
 
 
@@ -128,6 +135,17 @@
 	<script src="js/services/giftService.js"></script>
 	<script src="js/services/logService.js"></script>
 	<!-- endbuild -->
+
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', 'UA-57747018-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
 
 </body>
 </html>
