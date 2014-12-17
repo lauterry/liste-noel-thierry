@@ -55,7 +55,7 @@
 }
 
 .card {
-	@extend .z-depth-2;
+	@extend .z-depth-1;
 	-webkit-transition: box-shadow .5s linear;
 	-moz-transition: box-shadow .5s linear;
 	-ms-transition: box-shadow .5s linear;
@@ -137,7 +137,8 @@
 	line-height: 50px;
 	background-color: #43A9DD;
 	color: white;
-	transform: rotate(-30deg);
+	-webkit-transform : rotate(-30deg);
+	transform : rotate(-30deg);
 }
 
 .input-field {
