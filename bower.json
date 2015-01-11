@@ -1,12 +1,13 @@
 {
-  "name": "liste-noel",
-  "version": "",
-  "dependencies": {
-    "angular": "",
-    "angular-i18n": "",
-    "materialize": "*",
-    "firebase": "~2.0.6",
-    "angularfire": "~0.9.0"
-  },
-  "devDependencies": {}
+	"name": "liste-noel",
+	"version": "",
+	"dependencies": {
+		"angular": "*",
+		"angular-i18n": "*",
+		"angular-route": "*",
+		"materialize": "*",
+		"firebase": "~2.0.6",
+		"angularfire": "~0.9.0"
+	},
+	"devDependencies": {}
 }
