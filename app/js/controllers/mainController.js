@@ -19,6 +19,9 @@ angular.module('liste-noel').controller('mainController', function ($scope, gift
 			}
 
 			giftService.save(gift).then(angular.bind(this, function () {
+
+				$('#thank-you-modal').openModal();
+
 				var today = new Date();
 				logService.add({
 					"date" : today.getTime(),
@@ -27,6 +30,7 @@ angular.module('liste-noel').controller('mainController', function ($scope, gift
 					"amount" : this.participation
 				});
 				this.participation = undefined;
+
 			}));
 
 			$scope.contributeForm.$setPristine();
@@ -38,11 +42,14 @@ angular.module('liste-noel').controller('mainController', function ($scope, gift
 		gift.bought = true;
 		gift.remaining = 0;
 		giftService.save(gift).then(function () {
+
+			$('#thank-you-modal').openModal();
+
 			var today = new Date();
 			logService.add({
 				"date" : today.getTime(),
 				"name" : gift.name,
-				"type" : "contribute"
+				"type" : "buy"
 			});
 		});
 	};
