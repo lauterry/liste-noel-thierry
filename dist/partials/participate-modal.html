@@ -1,0 +1,28 @@
+<div id="participate-modal" class="modal">
+	<h4>Participation</h4>
+
+	<p>Le cadeau <span class="modal-emphasis">{{main.gift.name}}</span> coûte <span class="amount red-text">{{ main.gift.price }}€.</span>
+		<span ng-show="(main.gift.price - main.gift.remaining) === 0">Personne n'a encore participé.</span>
+			<span ng-show="(main.gift.price - main.gift.remaining) > 0">Il y a une participation totale de <span
+				class="amount blue-text">{{ (main.gift.price - main.gift.remaining) }}€</span>.</span>
+	</p>
+
+	<p>Vous pouvez donc contribuer jusqu'à <span class="amount green-text">{{ main.gift.remaining }}€</span>.</p>
+
+	<p>Je souhaite participer à hauteur de :</p>
+
+	<form novalidate name="contributeForm">
+		<div class="input-field">
+			<input id="amount" name="amount" type="text" required ng-model="main.participation" autofocus
+				   ng-pattern="/^[0-9]{1,7}/">
+			<label for="amount">Montant de la participation (€)</label>
+			<span class="red-text" ng-show="contributeForm.amount.$error.pattern || main.showMaxError">Veuillez saisir un montant inférieur à {{ main.gift.remaining }}€</span>
+				<span class="red-text" ng-show="contributeForm.$dirty && contributeForm.amount.$error.required">N'oubliez pas de saisir le
+					montant de votre participation</span>
+		</div>
+		<button class="waves-effect waves-light btn modal-close" ng-click="main.confirmParticipation()"
+				ng-disabled="contributeForm.$invalid">Je participe</button>
+		<a href="" class="waves-effect btn-flat modal-close">Annuler</a>
+	</form>
+
+</div>

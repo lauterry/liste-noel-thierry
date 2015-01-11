@@ -21,7 +21,7 @@ angular.module('liste-noel').config(function ($routeProvider) {
 		})
 		.otherwise({
 			redirectTo: '/list'
-		})
+		});
 });
 
 
