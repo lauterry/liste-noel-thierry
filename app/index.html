@@ -97,9 +97,9 @@
 				<span class="red-text" ng-show="contributeForm.$dirty && contributeForm.amount.$error.required">N'oubliez pas de saisir le
 					montant de votre participation</span>
 			</div>
-			<button class="waves-effect waves-light btn modal_close" ng-click="main.confirmParticipation()"
+			<button class="waves-effect waves-light btn modal-close" ng-click="main.confirmParticipation()"
 			   ng-disabled="contributeForm.$invalid">Je participe</button>
-			<a href="" class="btn-flat modal_close">Annuler</a>
+			<a href="" class="btn-flat modal-close">Annuler</a>
 		</form>
 
 	</div>
@@ -110,10 +110,17 @@
 
 		<p>Etes-vous sur de vouloir réserver et m'offrir <span class="modal-emphasis">{{main.gift.name | defaultGift}}</span>. Si c'est le cas,
 			d'autres personnes ne pourront plus me l'offrir.</p>
-		<a href="" class="waves-effect green waves-light btn modal_close" ng-click="main.confirmBuy();">Oui, je te
+		<a href="" class="waves-effect green waves-light btn modal-close" ng-click="main.confirmBuy();">Oui, je te
 			l'offre</a>
-		<a href="" class="btn-flat modal_close">Non, je vais y réfléchir</a>
+		<a href="" class="btn-flat modal-close">Non, je vais y réfléchir</a>
 	</div>
+
+	<div id="thank-you-modal" class="modal">
+		<h4>Merci</h4>
+		<p>Merci pour ce cadeau =)</p>
+		<a href="#" class="waves-effect btn-flat modal-close">Agree</a>
+	</div>
+
 </div>
 
 <div class="parallax-container footer">
