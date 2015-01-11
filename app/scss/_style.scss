@@ -83,6 +83,12 @@
 
 		img	{
 			z-index: 0;
+			max-height: 300px;
+			width: auto;
+
+			@media #{$small-and-down} {
+				width: 100%;
+			}
 		}
 
 		span.blur {

@@ -8971,6 +8971,13 @@ ul.table-of-contents a.active {
 }
 .card .card-image img {
   z-index: 0;
+  max-height: 300px;
+  width: auto;
+}
+@media only screen and (max-width: 600px) {
+  .card .card-image img {
+    width: 100%;
+  }
 }
 .card .card-image span.blur {
   right: 0;
