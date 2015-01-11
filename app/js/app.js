@@ -7,7 +7,12 @@ angular.module('liste-noel').config(function ($routeProvider) {
 		.when('/list', {
 			templateUrl : '/partials/list.html',
 			controller : "mainController",
-			controllerAs : "main"
+			controllerAs : "main",
+			resolve : {
+				gifts : function (giftService) {
+					return giftService.fetch();
+				}
+			}
 		})
 		.when('/admin', {
 			templateUrl : '/partials/admin.html',

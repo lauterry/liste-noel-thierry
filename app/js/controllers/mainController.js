@@ -1,9 +1,9 @@
-angular.module('liste-noel').controller('mainController', function ($scope, giftService, logService) {
+angular.module('liste-noel').controller('mainController', function ($scope, giftService, logService, gifts) {
     "use strict";
 
 	this.showMaxError = false;
 
-	this.gifts = giftService.fetch();
+	this.gifts = gifts;
 
 	this.confirmParticipation = function () {
 		this.showMaxError = false;
